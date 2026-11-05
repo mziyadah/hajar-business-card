@@ -27,3 +27,5 @@ for i in range(75,len(photo4),74):
 lines4.append("END:VCARD")
 Path("hajar-belhaoud-v4.vcf").write_bytes(("\\r\\n".join(lines4)+"\\r\\n").encode("utf-8"))
 print("Wrote vCard 4.0 alternate")
+
+# Generate both formats for compatibility testing.
