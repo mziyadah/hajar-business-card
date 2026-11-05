@@ -35,3 +35,5 @@ from zipfile import ZipFile, ZIP_DEFLATED
 with ZipFile("Hajar-Belhaoud-iPhone-Contact.zip","w",compression=ZIP_DEFLATED) as z:
     z.write("hajar-belhaoud-v4.vcf",arcname="Hajar-Belhaoud.vcf")
 print("Wrote iPhone contact ZIP")
+
+# Rebuild ZIP for Safari test.
