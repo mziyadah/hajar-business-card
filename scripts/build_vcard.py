@@ -15,3 +15,5 @@ for i in range(75,len(line),74):
 lines.append("END:VCARD")
 Path("hajar-belhaoud.vcf").write_bytes(("\r\n".join(lines)+"\r\n").encode("utf-8"))
 print("Wrote photo-embedded VCF:",len(buf.getvalue()),"JPEG bytes")
+
+# Regenerate photo-embedded contact card on update.
