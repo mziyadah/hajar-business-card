@@ -17,3 +17,13 @@ Path("hajar-belhaoud.vcf").write_bytes(("\r\n".join(lines)+"\r\n").encode("utf-8
 print("Wrote photo-embedded VCF:",len(buf.getvalue()),"JPEG bytes")
 
 # Regenerate photo-embedded contact card on update.
+
+# Alternative vCard 4.0: standards-compliant data URI photo for Apple Contacts testing.
+lines4=["BEGIN:VCARD","VERSION:4.0","N:Belhaoud;Hajar;;;","FN:Hajar Belhaoud","ORG:Ejelat Advertising Agency / Track Marketing Solutions","TITLE:Omnichannel Growth Manager","TEL;VALUE=uri;TYPE=cell:tel:+962788097319","EMAIL;TYPE=work:h.belhaoud@track-jo.com","URL:https://www.track-jo.com","NOTE:LinkedIn: https://www.linkedin.com/in/hajarbelhaoud"]
+photo4="PHOTO:data:image/jpeg;base64,"+photo
+lines4.append(photo4[:75])
+for i in range(75,len(photo4),74):
+    lines4.append(" "+photo4[i:i+74])
+lines4.append("END:VCARD")
+Path("hajar-belhaoud-v4.vcf").write_bytes(("\\r\\n".join(lines4)+"\\r\\n").encode("utf-8"))
+print("Wrote vCard 4.0 alternate")
